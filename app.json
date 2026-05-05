@@ -1,0 +1,76 @@
+{
+  "expo": {
+    "name": "Arc",
+    "slug": "arc-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "arc",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.sayedkarimi.arc",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Arc needs camera access to scan and analyze food.",
+        "NSMicrophoneUsageDescription": "Arc needs microphone access for voice logging.",
+        "NSPhotoLibraryUsageDescription": "Arc needs photo library access to analyze food photos.",
+        "NSSpeechRecognitionUsageDescription": "Arc uses speech recognition for voice commands.",
+        "NSFaceIDUsageDescription": "Arc uses Face ID to protect locked modules.",
+        "NSHealthShareUsageDescription": "Arc reads your health data to sync steps, sleep, and heart metrics.",
+        "NSHealthUpdateUsageDescription": "Arc writes health entries you log in the app.",
+        "NSSupportsLiveActivities": true
+      },
+      "entitlements": {
+        "com.apple.developer.healthkit": true,
+        "com.apple.developer.healthkit.background-delivery": true,
+        "com.apple.security.application-groups": [
+          "group.com.sayedkarimi.arc"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1C1C1E"
+      },
+      "package": "com.sayedkarimi.arc",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-notifications",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Arc needs camera access to scan food."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Arc needs photo access to analyze food photos."
+        }
+      ]
+    ],
+    "associatedDomains": [
+      "applinks:arc-app.vercel.app"
+    ],
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#f0f2f7"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "379e1391-2c9e-4725-bb97-6b4986e60d89"
+      }
+    },
+    "owner": "sayedkarimi"
+  }
+}
